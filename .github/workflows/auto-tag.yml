@@ -20,24 +20,31 @@ jobs:
       - name: Get latest tag
         id: get_tag
         run: |
-          LATEST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "v0.0")
-          echo "latest_tag=$LATEST_TAG" >> $GITHUB_OUTPUT
 
-          VERSION=${LATEST_TAG#v}
-          if [[ $VERSION =~ ^([0-9]+)\.([0-9]+)$ ]]; then
-            MAJOR="${BASH_REMATCH[1]}"
-            MINOR="${BASH_REMATCH[2]}"
+          git fetch --tags
+          LATEST_TAG=$(git tag -l 'v[0-9]*.[0-9]*' | sort -V | tail -n 1)
 
-            # 递增minor版本
-            NEW_MINOR=$((MINOR + 1))
-            NEW_TAG="v${MAJOR}.${NEW_MINOR}"
-          else
+          if [ -z "$LATEST_TAG" ]; then
+            echo "No existing tags found, starting from v1.0"
             NEW_TAG="v1.0"
+          else
+            echo "Latest tag: $LATEST_TAG"
+
+            VERSION=${LATEST_TAG#v}
+            if [[ $VERSION =~ ^([0-9]+)\.([0-9]+)$ ]]; then
+              MAJOR="${BASH_REMATCH[1]}"
+              MINOR="${BASH_REMATCH[2]}"
+
+              NEW_MINOR=$((MINOR + 1))
+              NEW_TAG="v${MAJOR}.${NEW_MINOR}"
+            else
+              echo "Warning: Tag format doesn't match v1.X, starting from v1.0"
+              NEW_TAG="v1.0"
+            fi
           fi
 
           echo "new_tag=$NEW_TAG" >> $GITHUB_OUTPUT
-          echo "Latest tag: $LATEST_TAG"
-          echo "New tag: $NEW_TAG"
+          echo "New tag will be: $NEW_TAG"
 
       - name: Create and push tag
         env:

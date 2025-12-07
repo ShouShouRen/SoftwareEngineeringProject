@@ -38,4 +38,8 @@
 **描述:** 說明「教師手動更換教室」的互動流程。對應需求 AC5 (手動更換) 與 AC3 (防止重複預訂)。
 <img width="3620" height="3102" alt="手動排程循序圖" src="https://github.com/user-attachments/assets/333ce68c-9de7-4ee4-bda1-7f10f8e937d5" />
 
+### **2.3 狀態圖 (State Diagram)**
+
+**描述:** 描述一門課程在排程系統中的生命週期狀態變化。
+<img width="502" height="252" alt="自動排課狀態圖 drawio" src="https://github.com/user-attachments/assets/948d21c4-73e7-40c2-bb4d-5a96077e34b0" />
 

@@ -41,5 +41,38 @@
 ### **2.3 狀態圖 (State Diagram)**
 
 **描述:** 描述一門課程在排程系統中的生命週期狀態變化。
-<img width="502" height="252" alt="自動排課狀態圖 drawio" src="https://github.com/user-attachments/assets/948d21c4-73e7-40c2-bb4d-5a96077e34b0" />
+<img width="2008" height="1008" alt="自動排課狀態圖" src="https://github.com/user-attachments/assets/44344ac1-b3de-4926-8645-b94fe32cd741" />
+
+## **3\. 資料庫設計 (Database Design) \-**
+
+為了滿足 **AC1\~AC3** 的資料驗證需求，資料庫設計如下。
+
+### **3.1 實體關聯圖 (ER Diagram 概念)**
+
+* **Teachers (教師表):** 儲存教師基本資料。  
+* **Classrooms (教室表):** 儲存靜態資源，關鍵欄位為 Capacity (容量)。  
+* **Courses (課程表):** 核心表，儲存上課時間與分配到的教室。
+
+### **3.2 資料表結構 (Schema)**
+
+Table: Classrooms  
+| 欄位名 | 類型 | 描述 | 備註 |  
+| :--- | :--- | :--- | :--- |  
+| id | VARCHAR(10) | 教室編號 | PK, e.g., "E-201" |  
+| name | VARCHAR(50) | 教室名稱 | |  
+| capacity | INT | 容納人數 | 用於 AC2 檢查 |  
+| equipment | JSON | 設備列表 | e.g., \["Projector", "PC"\] |  
+Table: Courses  
+| 欄位名 | 類型 | 描述 | 備註 |  
+| :--- | :--- | :--- | :--- |  
+| id | BIGINT | 課程 ID | PK |  
+| teacher\_id | BIGINT | 授課教師 | FK \-\> Teachers.id |  
+| subject\_name| VARCHAR(100)| 課程名稱 | |  
+| student\_count| INT | 預計修課人數| 用於 AC2 檢查 |  
+| day\_of\_week | INT | 星期幾 | 1=週一, ..., 5=週五 |  
+| start\_period| INT | 開始節次 | e.g., 3 (第3節) |  
+| end\_period | INT | 結束節次 | e.g., 4 (第4節) |  
+| classroom\_id| VARCHAR(10) | 分配教室 | FK \-\> Classrooms.id (Null表示未排) |  
+| status | VARCHAR(20) | 排程狀態 | PENDING, SCHEDULED, FAILED |
+
 

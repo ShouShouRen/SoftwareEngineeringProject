@@ -33,4 +33,9 @@
 **描述:** 說明「自動排程演算法」的執行流程。對應需求 AC1 (時間衝突)、AC2 (容量)。
 <img width="956" height="444" alt="排課" src="https://github.com/user-attachments/assets/eeeb92f2-66b4-4075-9f13-cf9cda406d23" />
 
+### **2.2 循序圖 (Sequence Diagram)**
+
+**描述:** 說明「教師手動更換教室」的互動流程。對應需求 AC5 (手動更換) 與 AC3 (防止重複預訂)。
+<img width="3620" height="3102" alt="手動排程循序圖" src="https://github.com/user-attachments/assets/333ce68c-9de7-4ee4-bda1-7f10f8e937d5" />
+
 

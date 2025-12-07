@@ -1,4 +1,4 @@
-# 📐 系統設計文件 (Design Document) - Story 5：課程瀏覽與高效搜尋 (1.0V)
+# 📐 系統設計文件 (Design Document) - Story 5：課程瀏覽與高效搜尋 (1.2V)
 
 ## 1. 文件概覽 (Document Summary)
 
@@ -21,7 +21,7 @@
 * **核心組件：** `Course` (課程資料)、`SearchEngine` (負責查詢邏輯)。
 * **關係：** 學生 (`Student`) 使用 `CourseList` 進行瀏覽，並透過 `SearchEngine` 執行複雜查詢。
 
-![Story 5 狀態圖](image1.png)
+![Story 5 狀態圖](diagrams/image1.png)
 
 ### 2.2 活動圖 (Activity Diagram) 說明
 
@@ -30,7 +30,7 @@
 * **流程重點：** 涵蓋了從載入列表到決策是否使用**萬用搜尋** (FR-S5.3)、**時間區段搜尋** (FR-S5.4) 和 **屬性篩選** (FR-S5.5) 的所有路徑。
 * **圖像解釋：** 描繪了學生查詢時，從啟動、排序、搜尋到篩選（多個決策分支）的完整流程路徑。
 
-![Story 5 活動圖](image.png)
+![Story 5 活動圖](diagrams/image.png)
 
 ### 2.3 循序圖 (Sequence Diagram) 說明
 
@@ -39,6 +39,6 @@
 * **參與者：** 學生 (Student)、介面 (UI)、控制器 (Controller)、搜尋引擎 (Engine)、資料庫 (DB)。
 * **重點驗證：** 確保查詢操作的流程正確、效率高，並由 `SearchEngine` 負責處理資料庫的模糊比對。
 
-![Story 5 順序圖](image1.png)
+![Story 5 順序圖](diagrams/image1.png)
 
 ---

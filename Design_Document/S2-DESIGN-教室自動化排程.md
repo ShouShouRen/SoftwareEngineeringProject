@@ -61,7 +61,9 @@ Table: Classrooms
 | id | VARCHAR(10) | 教室編號 | PK, e.g., "E-201" |  
 | name | VARCHAR(50) | 教室名稱 | |  
 | capacity | INT | 容納人數 | 用於 AC2 檢查 |  
-| equipment | JSON | 設備列表 | e.g., \["Projector", "PC"\] |  
+| equipment | JSON | 設備列表 | e.g., \["Projector", "PC"\] | 
+
+
 Table: Courses  
 | 欄位名 | 類型 | 描述 | 備註 |  
 | :--- | :--- | :--- | :--- |  

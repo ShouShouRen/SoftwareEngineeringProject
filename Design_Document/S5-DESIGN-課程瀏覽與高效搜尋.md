@@ -21,7 +21,7 @@
 * **核心組件：** `Course` (課程資料)、`SearchEngine` (負責查詢邏輯)。
 * **關係：** 學生 (`Student`) 使用 `CourseList` 進行瀏覽，並透過 `SearchEngine` 執行複雜查詢。
 
-![Story 5 類別圖](diagrams/class_diagram_s5.png)
+![Story 5 類別圖](<img width="845" height="623" alt="image" src="https://github.com/user-attachments/assets/aaad84cc-efd7-4bff-82c3-26ae3ece6aa6" />)
 
 ### 2.2 活動圖 (Activity Diagram) 說明
 

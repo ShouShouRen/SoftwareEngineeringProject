@@ -28,3 +28,8 @@
 
 本節針對需求文件中定義的 **任務 1 (自動排程)** 與 **任務 3 (手動修改)** 進行邏輯建模。
 
+### **2.1 活動圖 (Activity Diagram)**
+
+**描述:** 說明「自動排程演算法」的執行流程。對應需求 AC1 (時間衝突)、AC2 (容量)。
+<img width="940" height="402" alt="排課" src="https://github.com/user-attachments/assets/c4ad1de7-19c7-4add-a5ed-fc907e412d2f" />
+

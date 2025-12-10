@@ -39,7 +39,7 @@
 <img width="6088" height="1057" alt="活動圖" src="https://github.com/user-attachments/assets/e2738dbf-9161-4442-a8ab-ff9fdffb0ea9" />
 
 ### **2.2 循序圖 (Sequence Diagram)**
-<img width="5785" height="4925" alt="順序圖" src="https://github.com/user-attachments/assets/69e52e60-dd50-4dcf-aad9-39c69b3e5540" />
+<img width="4250" height="3885" alt="順序圖" src="https://github.com/user-attachments/assets/36af8407-41cb-44a1-ae67-60c0ca16f030" />
 
 ### **2.3 狀態圖 (State Diagram)**
 <img width="5051" height="787" alt="狀態圖" src="https://github.com/user-attachments/assets/0a041600-11c9-4fee-a613-23649fbe817e" />
